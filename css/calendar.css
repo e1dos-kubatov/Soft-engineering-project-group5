@@ -1,70 +1,115 @@
-.st-accordion{
-	width: 940px;
-}
+/*---------------------------------------------------
+   Accordion – Clarity Bootstrap Modern Style
+----------------------------------------------------*/
 
-.st-accordion ul li{
-    border-bottom: 1px solid #eee;
-    border-top:1px solid #fff;
+.st-accordion {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     overflow: hidden;
-	list-style-type: none;
-}
-.st-accordion ul li:first-child{
-    border-top:none;
-}
-.st-accordion ul li > a{
-	font-size: 1.5em;
-    display: block;
-	position: relative;
-    line-height: 2.5em;
-	outline:none;
-	text-decoration: none;
-	color: #708090;
-	text-align: center;
-    -webkit-transition:  color 0.4s ease-in-out;
-	-moz-transition:  color 0.2s ease-in-out;
-	-o-transition:  color 0.2s ease-in-out;
-	-ms-transition:  color 0.2s ease-in-out;
-	transition:  color 0.2s ease-in-out;
-}
-.st-accordion ul li > a span{
-	background: transparent url(../images/down.png) no-repeat center center;
-	text-indent:-9000px;
-	width: 26px;
-	height: 14px;
-	position: absolute;
-	top: 50%;
-	right: -26px;
-	margin-top: -7px;
-	opacity:0;
-	-webkit-transition:  all 0.2s ease-in-out;
-	-moz-transition:  all 0.2s ease-in-out;
-	-o-transition:  all 0.2s ease-in-out;
-	-ms-transition:  all 0.2s ease-in-out;
-	transition:  all 0.2s ease-in-out;
-}
-.st-accordion ul li > a:hover{
-    color: #1693eb;
-}
-.st-accordion ul li > a:hover span{
-	opacity:1;
-	right: 10px;
-}
-.st-accordion ul li.st-open > a{
-    color: #1693eb;
-}
-.st-accordion ul li.st-open > a span{
-	-webkit-transform:rotate(180deg);
-	-moz-transform:rotate(180deg);
-    transform:rotate(180deg);
-	right:10px;
-	opacity:1;
-}
-.st-content{
-    padding: 5px 0px;
+    transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 320px){
-	.st-accordion ul li > a{
-		font-size:36px;
-	}
+/* Accordion Items */
+.st-accordion ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.st-accordion ul li {
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fff;
+    transition: background 0.3s ease;
+}
+
+.st-accordion ul li:hover {
+    background-color: #f9fbff;
+}
+
+/* Accordion Links */
+.st-accordion ul li > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #334155;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.st-accordion ul li > a:hover {
+    color: #0d6efd;
+    background-color: #f0f8ff;
+}
+
+/* Icon (arrow) */
+.st-accordion ul li > a span {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23334155" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover arrow color */
+.st-accordion ul li > a:hover span {
+    filter: brightness(0) saturate(100%) invert(29%) sepia(99%) saturate(749%) hue-rotate(190deg) brightness(92%) contrast(92%);
+}
+
+/* Open State */
+.st-accordion ul li.st-open > a {
+    color: #0d6efd;
+    font-weight: 600;
+    background-color: #eaf3ff;
+}
+
+.st-accordion ul li.st-open > a span {
+    transform: rotate(180deg);
+    filter: brightness(0) saturate(100%) invert(29%) sepia(99%) saturate(749%) hue-rotate(190deg) brightness(92%) contrast(92%);
+}
+
+/* Accordion Content */
+.st-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    padding: 0 1.5rem;
+    background-color: #ffffff;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.st-open .st-content {
+    max-height: 400px;
+    padding: 1rem 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .st-accordion {
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    .st-accordion ul li > a {
+        font-size: 1rem;
+        padding: 0.9rem 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .st-accordion ul li > a {
+        font-size: 0.95rem;
+        padding: 0.8rem 1rem;
+    }
 }
