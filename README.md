@@ -11,7 +11,8 @@ This repository contains the rewritten and modernized code for the AIU Web Site 
 
 ## Production Server  
 The application is currently hosted at the following address:  
-[..........................]  
+[http://127.0.0.1:5500/]
+[https://github.com/e1dos-kubatov/Soft-engineering-project-group5.git]  
 
 ## Implementation Goals (Website Rewrite)
 
